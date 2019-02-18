@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="CampoTexto" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">#636668</item>
+        <item name="colorControlActivated">#3498db</item>
+        <item name="android:textColorHighlight">#64a9d7</item>
+    </style>
+
+</resources>

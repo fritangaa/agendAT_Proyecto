@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_fondo"
+    tools:context=".Login"
+    tools:layout_editor_absoluteY="25dp">
+
+    <ImageView
+        android:id="@+id/img_login_logo"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/img_logo"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="30dp" />
+
+    <EditText
+        android:id="@+id/txtCorreoLogin"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/img_login_logo"
+        android:layout_centerHorizontal="true"
+        android:drawableLeft="@drawable/ic_login_usuario"
+        android:drawablePadding="8dp"
+        android:hint="Usuario"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        android:textColor="@color/colorBlanco"
+        android:textColorHint="@color/colorGris"
+        android:theme="@style/CampoTexto"
+        tools:layout_editor_absoluteX="67dp"
+        tools:layout_editor_absoluteY="246dp" />
+
+    <EditText
+        android:id="@+id/txtPassLogin"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_alignLeft="@+id/txtCorreoLogin"
+        android:layout_alignStart="@+id/txtCorreoLogin"
+        android:layout_below="@+id/txtCorreoLogin"
+        android:drawableLeft="@drawable/ic_login_contrasena"
+        android:drawablePadding="8dp"
+        android:hint="Contraseña"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:textColor="@color/colorBlanco"
+        android:textColorHint="@color/colorGris"
+        android:theme="@style/CampoTexto"
+        tools:layout_editor_absoluteX="67dp"
+        tools:layout_editor_absoluteY="305dp" />
+
+    <CheckBox
+        android:id="@+id/ckRecuerda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_alignStart="@+id/txtCorreoLogin"
+        android:layout_below="@+id/txtPassLogin"
+        android:text="Recuerdame"
+        android:textColor="@color/colorBlanco"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/btnInicioLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/ckRecuerda"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/colorBotonOn"
+        android:text="Entrar"
+        android:textColor="@color/colorBlanco"
+        tools:layout_editor_absoluteX="156dp"
+        tools:layout_editor_absoluteY="380dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnRegistroLogin"
+        android:layout_centerHorizontal="true"
+        android:text="¿No tienes cuenta aún?"
+        android:textColor="@color/colorBlanco"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="449dp" />
+
+    <Button
+        android:id="@+id/btnRegistroLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/transparent"
+        android:text="¡ Regístrate !"
+        android:textAllCaps="false"
+        android:textColor="@color/colorBlanco"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="503dp" />
+
+
+</RelativeLayout>

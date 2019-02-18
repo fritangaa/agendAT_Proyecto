@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".usuario.AgendarCita">
+
+
+    <com.github.florent37.bubbletab.BubbleTab
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tabs"
+        android:background="@color/colorBotonOn"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabTextColor="@color/colorGris"
+        app:tabSelectedTextColor="@color/colorBlanco"
+        app:bubbleTab_circleColor="@color/colorBotonOn"
+        app:bubbleTab_circleRatio="1.25"
+        app:bubbleTab_image0="@drawable/ic_ac_lugar"
+        app:bubbleTab_image1="@drawable/ic_ac_servicio"
+        app:bubbleTab_image2="@drawable/ic_ac_hora"
+        app:bubbleTab_image3="@drawable/ic_ac_dia"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pager"
+        />
+
+</LinearLayout>

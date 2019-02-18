@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "953375701437",
+    "firebase_url": "https://agendat-f00fb.firebaseio.com",
+    "project_id": "agendat-f00fb",
+    "storage_bucket": "agendat-f00fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953375701437:android:9100e7f931c6e7ba",
+        "android_client_info": {
+          "package_name": "aat.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953375701437-ngie5tdie55btomr8hn8umnsm46l4689.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "aat.com",
+            "certificate_hash": "d4cb0a37d06f9ca5bce2744c607ef9b307546cef"
+          }
+        },
+        {
+          "client_id": "953375701437-dfdsjflisd9blbucs9pritnb9o9i4u6v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPfUXuGp3TmSeHC8aHWIrpsjwhue9vBVQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953375701437-dfdsjflisd9blbucs9pritnb9o9i4u6v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
