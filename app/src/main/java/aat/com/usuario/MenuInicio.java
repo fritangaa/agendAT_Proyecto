@@ -113,6 +113,7 @@ public class MenuInicio extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuInicio.this, MisCitas.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -121,6 +122,7 @@ public class MenuInicio extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuInicio.this, AgendarCita.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -138,6 +140,7 @@ public class MenuInicio extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuInicio.this, CitaExpress.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -146,6 +149,7 @@ public class MenuInicio extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuInicio.this, Promociones.class);
                 startActivity(intent);
+                finish();
             }
         });
 
