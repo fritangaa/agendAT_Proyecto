@@ -34,6 +34,8 @@ public class AgendarCita extends AppCompatActivity {
 
         tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+
     }
 
     @Override

@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".usuario.AgendarCitaFragment"
-    android:background="@drawable/img_fondo"
-    >
+    android:background="@drawable/img_fondo">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
@@ -15,18 +15,25 @@
         android:layout_margin="15dp"
         android:visibility="visible"
         >
-        <TextView
-            android:id="@+id/textocrea"
-            android:layout_width="wrap_content"
+        <SearchView
+            android:id="@+id/shEstablecimientoUsuario"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:iconifiedByDefault="false"
+            android:queryHint="Busca aquí"
+
+            />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/listaEstablecimientoUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shEstablecimientoUsuario"
             android:layout_margin="10dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:text="Lugar"
-            android:textColor="@color/colorBlanco"
-            android:textSize="30dp" />
+            android:layout_alignParentBottom="true"
+            />
 
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/relativeAgendaServicio"
         android:layout_width="match_parent"

@@ -99,7 +99,7 @@ public class Login extends AppCompatActivity {
         btnRegistro.setOnClickListener(new View.OnClickListener() {//pasar a la siguiente pantalla
             @Override
             public void onClick(View v) {//el evento de click para confirmar la cita
-                databaseReference.child("Usuario").child("y2By10fDIwaMbCTNWWDhdqnrodJ3").child("citas").push().child("correo").setValue(txtCorreo.getText().toString());
+                databaseReference.child("Cliente").push().child("datos").child("nom").setValue(txtCorreo.getText().toString());
                 Toast.makeText(Login.this, "datos", Toast.LENGTH_SHORT).show();
             }
         });
