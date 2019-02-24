@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_fondo"
+    tools:context=".Cliente.ConfigurarNegocio">
+
+    <GridLayout
+        android:id="@+id/ConfigNegocioGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:rowCount="15">
+
+        <TextView
+            android:id="@+id/txtConfigNegocio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_columnSpan="4"
+            android:layout_row="0"
+            android:text="@string/configNegocio"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlanco"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="0"
+            android:layout_columnSpan="4"
+            android:layout_row="1"
+            android:text="@string/txtHorario"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp" />
+<!-- ************************************* Lunes ************************************** -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:text="@string/txtLunes"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spinnerLunesInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="2"
+            android:background="@color/colorBlanco"
+            android:textColor="@color/colorNegro"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:entries="@array/hora"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="2"
+            android:layout_row="2"
+            android:text="a"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerLunesFin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="2"
+            android:background="@color/colorBlanco"
+            android:textColor="@color/colorNegro"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:entries="@array/hora"/>
+        <!-- ************************************* Martes ************************************** -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:text="@string/txtMartes"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spinnerMartesInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="3"
+            android:background="@color/colorBlanco"
+            android:textColor="@color/colorNegro"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:entries="@array/hora"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="2"
+            android:layout_row="3"
+            android:text="a"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerMartesFin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="3"
+            android:background="@color/colorBlanco"
+            android:textColor="@color/colorNegro"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:entries="@array/hora"/>
+        <!-- ************************************* Miercoles ************************************** -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="0"
+            android:layout_row="4"
+            android:text="@string/txtMiercoles"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spinnerMiercolesInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="4"
+            android:background="@color/colorBlanco"
+            android:textColor="@color/colorNegro"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:entries="@array/hora"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="2"
+            android:layout_row="4"
+            android:text="a"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerMiercolesFin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="4"
+            android:background="@color/colorBlanco"
+            android:textColor="@color/colorNegro"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:entries="@array/hora"/>
+        <!-- ************************************* Jueves ************************************** -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="0"
+            android:layout_row="5"
+            android:text="@string/txtJueves"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spinnerJuevesInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="5"
+            android:background="@color/colorBlanco"
+            android:textColor="@color/colorNegro"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:entries="@array/hora"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="2"
+            android:layout_row="5"
+            android:text="a"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerJuevesFin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="5"
+            android:background="@color/colorBlanco"
+            android:textColor="@color/colorNegro"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:entries="@array/hora"/>
+        <!-- ************************************* Viernes ************************************** -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="0"
+            android:layout_row="6"
+            android:text="@string/txtViernes"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spinnerViernesInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="6"
+            android:background="@color/colorBlanco"
+            android:textColor="@color/colorNegro"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:entries="@array/hora"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="2"
+            android:layout_row="6"
+            android:text="a"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerViernesFin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="6"
+            android:background="@color/colorBlanco"
+            android:textColor="@color/colorNegro"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:entries="@array/hora"/>
+        <!-- ************************************* Sabado ************************************** -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="0"
+            android:layout_row="7"
+            android:text="@string/txtSabado"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spinnerSabadoInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="7"
+            android:background="@color/colorBlanco"
+            android:textColor="@color/colorNegro"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:entries="@array/hora"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="2"
+            android:layout_row="7"
+            android:text="a"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerSabadoFin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="7"
+            android:background="@color/colorBlanco"
+            android:textColor="@color/colorNegro"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:entries="@array/hora"/>
+        <!-- ************************************* Domingo ************************************** -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="0"
+            android:layout_row="8"
+            android:text="@string/txtDomingo"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spinnerDomingoInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="8"
+            android:background="@color/colorBlanco"
+            android:textColor="@color/colorNegro"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:entries="@array/hora"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="2"
+            android:layout_row="8"
+            android:text="a"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerDomingoFin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="8"
+            android:background="@color/colorBlanco"
+            android:textColor="@color/colorNegro"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:entries="@array/hora"/>
+
+        <RelativeLayout
+            android:layout_columnSpan="4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="128dp"
+            tools:layout_editor_absoluteY="451dp">
+
+            <Button
+                android:id="@+id/guardarConfig"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/guardarConfig"
+                android:textColor="@color/colorBlanco"
+                android:background="@color/itemselec"
+                android:layout_centerHorizontal="true"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="503dp" />
+
+        </RelativeLayout>
+
+    </GridLayout>
+
+</android.support.constraint.ConstraintLayout>
