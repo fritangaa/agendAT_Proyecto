@@ -1,37 +1,43 @@
 package aat.com.usuario;
 
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import aat.com.R;
-import aat.com.clases.ItemLongClickListener;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AgendarCitaFragment extends Fragment {
+public class AgendarCitaFragment extends Fragment implements OnMapReadyCallback {
+
+    private GoogleMap mMap;
+    private MapView mMapView;
 
     private DatabaseReference clientes;
     private FirebaseAuth firebaseAuth;
-
-    private FirebaseRecyclerAdapter<objCliente,objClienteViewHolder.ViewHolder> adapterListaClientes;
 
     private RecyclerView listaClinetes;
 
@@ -57,7 +63,8 @@ public class AgendarCitaFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_agendar_cita, container, false);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        clientes= FirebaseDatabase.getInstance().getReference("/Cliente/");
+        clientes= FirebaseDatabase.getInstance().getReference().child("/Cliente/");
+        Toast.makeText(view.getContext(), clientes.toString(), Toast.LENGTH_SHORT).show();
 
         agendaLugar = (RelativeLayout) view.findViewById(R.id.relativeAgendaLugar);
         agendaServicio = (RelativeLayout) view.findViewById(R.id.relativeAgendaServicio);
@@ -92,53 +99,55 @@ public class AgendarCitaFragment extends Fragment {
 
         listaClinetes.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        adapterListaClientes=new FirebaseRecyclerAdapter<objCliente, objClienteViewHolder.ViewHolder>(
-                objCliente.class,
-                R.layout.obj_lista_clientes,
-                objClienteViewHolder.ViewHolder.class,
-                clientes
-        ) {
-            @Override
-            protected void populateViewHolder(final objClienteViewHolder.ViewHolder viewHolder,
-                                              final objCliente model, final int position) {
-                viewHolder.nombre.setText(model.getNombre());
-                viewHolder.valoracion.setText(model.getValoracion());
-                viewHolder.direccion.setText(model.getDireccion());
-
-                viewHolder.setItemLongClickListener(new ItemLongClickListener() {
-                    @Override
-                    public void onItemLongClick(View v, int pos) {
-                        AlertDialog.Builder dialogo1 = new AlertDialog.Builder(view.getContext());
-                        dialogo1.setTitle("¡Aviso!");
-                        dialogo1.setIcon(R.drawable.ic_alerta_notificacion);
-                        dialogo1.setMessage("El evento que seleccionaste se eliminara");
-                        dialogo1.setCancelable(false);
-                        dialogo1.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialogo1, int id) {
-                                Toast.makeText(view.getContext(), "Evento eliminado", Toast.LENGTH_SHORT).show();
-                                adapterListaClientes.getRef(position).removeValue();
-                            }
-                        });
-                        dialogo1.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialogo1, int id) {
-                                Toast.makeText(view.getContext(), "El evento no se elimino", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                        dialogo1.show();
-
-                    }
-                });
-
-            }
-        };
-
-        listaClinetes.setAdapter(adapterListaClientes);
-
-        listaClinetes.setItemAnimator(new DefaultItemAnimator());
-
+        mMapView = view.findViewById(R.id.mapaUbicacionEstablecimiento);
+        if (mMapView != null) {
+            mMapView.onCreate(null);
+            mMapView.onResume();
+            mMapView.getMapAsync(this);
+        }
 
 
         return view;
+    }
+
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        try {
+            // Customise the styling of the base map using a JSON object defined
+            // in a raw resource file.
+            boolean success = googleMap.setMapStyle(
+                    MapStyleOptions.loadRawResourceStyle(
+                            view.getContext(), R.raw.mapstyle));
+
+            if (!success) {
+                Log.e("ubicacion", "Style parsing failed.");
+            }
+        } catch (Resources.NotFoundException e) {
+            Log.e("ubicacion", "Can't find style. Error: ", e);
+        }
+
+        // Controles UI
+        if (ContextCompat.checkSelfPermission(view.getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+        } else {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
+                    Manifest.permission.ACCESS_FINE_LOCATION)) {
+                // Mostrar diálogo explicativo
+            } else {
+                // Solicitar permiso
+                ActivityCompat.requestPermissions(
+                        getActivity(),
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        1);
+            }
+        }
+
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+
+
     }
 
 }
